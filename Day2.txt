@@ -1,0 +1,154 @@
+//String validation
+PROGRAM
+#include<stdio.h>
+
+
+int strval(char str[])
+{   int c1=0,c2=0,i;
+    
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]!='*'||str[i]!='#')
+            return -1;
+        if(str[i]=='*')
+        c1++;
+        else if(str[i]=='#')
+        c2++;
+    }
+    if(c1==c2)
+    return 0;
+    if(c1>c2)
+    return 1;
+    else
+    return -1;
+
+}
+void main()
+{
+    char str[10];
+    int x;
+    
+    printf("Enter a string: ");
+    gets(str);
+    x=strval(str);
+    if(x==0)
+    printf("String is valid");
+    else
+    printf("String is not valid");
+}
+OUTPUT
+Enter a string: #*#**#
+String is valid
+
+Enter a string: #*#*7
+String is not valid
+
+Enter a string: #*#
+String is not valid
+
+//1D array, check if sum is prime
+PROGRAM
+#include<stdio.h>
+
+void main()
+{
+    int arr[10];
+    int sum=0,n,i,x=0;
+    printf("Enter number of terms: ");
+    scanf("%d",&n);
+    printf("Enter array elements: ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+        sum+=arr[i];
+    }
+    printf("Array elements are: ");
+     for(i=0;i<n;i++)
+    printf("%d\t",arr[i]);
+    printf("\n");
+
+    for(i=1;i<=sum;i++)
+    {
+        if(sum%i==0)
+            x++;
+    }
+    printf("Sum of the array is %d and it is ",sum);
+    if(x==2)
+    printf("prime");
+    else
+    printf("not prime");
+}
+OUTPUT
+Enter number of terms: 5
+Enter array elements: 1 2 3 4 5
+Array elements are: 1   2       3       4       5
+Sum of the array is 15 and it is not prime
+
+Enter number of terms: 5
+Enter array elements: 1 1 1 1 1
+Array elements are: 1   1       1       1       1
+Sum of the array is 5 and it is prime
+
+//Reverse, replace 0 with $ in 1D array
+PROGRAM
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{
+    char str[100];
+    int i,n;
+    printf("Enter array elements: ");
+    gets(str);
+    n=strlen(str);
+    printf("Reverse with zero replaced by $: ");
+    for(i=n-1;str[i]!='\0';i--)
+    {
+        if(str[i]=='0')
+        printf("$");
+        else
+        printf("%c",str[i]);
+    }
+}
+OUTPUT
+Enter array elements: 10 13 55 60
+Reverse with zero replaced by $: $6 55 31 $1
+
+//Array sorting
+PROGRAM
+#include<stdio.h>
+
+void main()
+{
+    int i,j,n,temp;
+    int arr[10];
+    printf("Enter no. of elements: ");
+    scanf("%d",&n);
+    printf("Enter array elements: ");
+    for(i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+
+    printf("Sorted array:\n");
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i;j<n-i-1;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    printf("%d\t",arr[i]);
+}
+OUTPUT
+Enter no. of elements: 5
+Enter array elements: 6 3 9 1 2
+Sorted array:
+3       1       2       6       9
+
+
+

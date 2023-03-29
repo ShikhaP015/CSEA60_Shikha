@@ -1,0 +1,189 @@
+//Triangle
+PROGRAM
+void main()
+{
+    int a,b,c;
+    printf("Enter sides of a triangle: ");
+    scanf("%d%d%d",&a,&b,&c);
+    if((a+b>=c)&&(a+c>=b)&&(b+c>=a))
+        printf("Triangle can be formed");
+    else
+        printf("Triangle can't be formed");
+}
+OUTPUT
+Enter sides of a triangle: 5 4 3
+Triangle can be formed
+Enter sides of a triangle: 7 8 3
+Triangle can be formed
+
+//Perfect Number
+PROGRAM
+void main()
+{
+    int sum=0,i,a;
+    printf("Enter a number: ");
+    scanf("%d",&a);
+    for(i=1;i<a;i++)
+    {
+        if(a%i==0)
+        sum+=i;
+    }
+    if(sum==a)
+    printf("%d is a perfect number",a);
+    else
+    printf("%d is not a perfect number",a);
+}
+OUTPUT
+Enter a number: 496
+496 is a perfect number
+
+Enter a number: 778
+778 is not a perfect number
+
+//Predict output:
+1.int main()
+{
+    char str[25];
+    printf("%d",printf("CSE STUDENTS ROCKS"));
+    return 0;
+}
+OUTPUT
+CSE STUDENTS ROCKS18
+
+2.int main()
+{
+    int a=3;
+    printf("%d");
+    return 0;
+}
+OUTPUT
+4200768
+
+3.int main()
+{
+    char *ptr="Kollam Beach";
+    printf(ptr+3);
+    return 0;
+}
+OUTPUT
+lam Beach
+
+4.int main()
+{
+    int a,b;
+    printf("%d",(scanf("%d%d",&a,&b)));
+    return 0;
+}
+OUTPUT
+3 5
+2
+
+5.int main()
+{
+    int a=1;
+    printf("%d%p",a,a);
+    return 0;
+}
+OUTPUT
+100000001
+
+6.int main()
+{
+    char num='\010';
+    printf("%d",num);
+    return 0;
+}
+OUTPUT
+8
+
+7.int main()
+{
+    void num=10;
+    printf("%v",num);
+    return 0;
+}
+OUTPUT
+tri.c: In function 'main':
+tri.c:73:10: error: variable or field 'num' declared void
+     void num=10;
+          ^~~
+8.int main()
+{
+    void *ptr;
+    int num=10;
+    ptr=&num;
+    printf("%d",ptr);
+    return 0;
+}
+OUTPUT
+6422296
+
+//Duplicates
+int main()
+{
+    int arr[10];
+    int n,x,i;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+    for(i=0;i<10;i++)
+    arr[i]=0;
+    while(n>0)
+    {
+        x=n%10;
+        if(arr[x]==1)
+        break;
+        arr[x]=1;
+        n=n/10;
+    }
+    if(n==0)
+    printf("No duplicates");
+    else
+    printf("Has duplicates");
+}
+OUTPUT
+Enter a number: 1231
+Has duplicates
+
+Enter a number: 1234
+No duplicates
+
+//2D array
+void main()
+{
+    int i,j,arr[10][10],r,c;
+    printf("Enter no. of rows and columns: ");
+    scanf("%d%d",&r,&c);
+    printf("Enter 2D array elements:");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        scanf("%d",&arr[i][j]);
+    }
+    printf("2d array is:\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        printf("%d\t",arr[i][j]);
+        printf("\n");
+    }
+}
+OUTPUT
+Enter no. of rows and columns: 2
+3
+Enter 2D array elements:1 2 3 4 5 6
+2d array is:
+1       2       3
+4       5       6
+
+
+
+
+
+
+
+
+
+
+
+
+
