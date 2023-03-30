@@ -1,0 +1,50 @@
+1.int main()
+{
+    int *num=(int*)malloc(4*(sizeof(int)));
+    int i;
+    num[0]=1;
+    num[1]=2;
+    num[2]=3;
+    printf("\nSorted integers are:");
+    for(i=0;i<4;i++)
+    printf("\nnum[%d]= %d",i,num[i]);
+    return 0;
+}
+OUTPUT
+num[0]= 1
+num[1]= 2
+num[2]= 3
+num[3]= 4643
+
+2.int main()
+{
+    char *ptr;
+    ptr=(char*)malloc(10);
+    strcpy(ptr,"Programming");
+    printf("%s, Address=%u\n",ptr,ptr);
+
+    ptr=(char*)realloc(ptr,20);  //ptr is reallocated with new size
+    strcat(ptr," in C");
+    printf("%s, Address=%u\n",ptr,ptr);
+    free(ptr);
+}
+OUTPUT
+Programming, Address=2038416
+Programming in C, Address=2038416
+
+3.int main()
+{
+    int n=10;
+    int *p=malloc(n);
+    if(p==NULL)
+    {
+        printf("Unable to allocate memory:(\n");
+        return -1;
+    }
+    printf("Allocated %d bytes of memory\n",n);
+    printf("%p\t%p\t%p",p,p+1,p+2);
+    return 0;
+}
+OUTPUT
+Allocated 10 bytes of memory
+00B21A90        00B21A94        00B21A98
